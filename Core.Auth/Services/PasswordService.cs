@@ -51,5 +51,38 @@ namespace Core.Auth.Services
 
             return CryptographicOperations.FixedTimeEquals(actual, expected);
         }
+
+        public bool ValidateStrength(string plainTextPsw)
+        {
+            const int minLength = 12;
+
+            if (string.IsNullOrWhiteSpace(plainTextPsw) || plainTextPsw.Length < minLength)
+                return false;
+
+            var hasUpper = false;
+            var hasLower = false;
+            var hasDigit = false;
+            var hasSymbol = false;
+
+            foreach (var c in plainTextPsw)
+            {
+                if (char.IsWhiteSpace(c))
+                    return false;
+
+                if (char.IsUpper(c))
+                    hasUpper = true;
+
+                if (char.IsLower(c))
+                    hasLower = true;
+
+                if (char.IsDigit(c))
+                    hasDigit = true;
+
+                if (!char.IsLetterOrDigit(c))
+                    hasSymbol = true;
+            }
+
+            return hasUpper && hasLower && hasDigit && hasSymbol;
+        }
     }
 }

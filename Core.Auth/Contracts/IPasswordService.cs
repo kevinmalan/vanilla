@@ -6,5 +6,6 @@ namespace Core.Auth.Contracts
     {
         Password HashPassword(string plainTextPsw);
         bool Verify(string plainTextPsw, string hash, string salt);
+        bool ValidateStrength(string plainTextPsw); 
     }
 }
