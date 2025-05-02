@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: vanilla_postgres_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vanilla_ice
+      POSTGRES_PASSWORD: "1ce1ceB@by!"
+      POSTGRES_DB: vanilla
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+    driver: local
