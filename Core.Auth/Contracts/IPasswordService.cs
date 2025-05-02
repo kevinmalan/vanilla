@@ -1,4 +1,4 @@
-﻿using Core.Auth.Models;
+﻿using Core.Models;
 
 namespace Core.Auth.Contracts
 {

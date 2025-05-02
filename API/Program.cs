@@ -12,6 +12,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var flow = scope.ServiceProvider.GetRequiredService<StartupFlow>();
+    await flow.SeedUserAsync();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

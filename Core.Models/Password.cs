@@ -1,4 +1,4 @@
-﻿namespace Core.Auth.Models
+﻿namespace Core.Models
 {
     public record Password
     {

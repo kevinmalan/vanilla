@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Data.Contracts;
+using Data.Seeds;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +12,8 @@ namespace Data
         {
             services.AddDbContext<DataContext>(o =>
             o.UseNpgsql(configuration.GetConnectionString("PostgreSQL")));
+
+            services.AddScoped<IAuthSeeder, AuthSeeder>();
         }
     }
 }

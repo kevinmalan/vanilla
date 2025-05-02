@@ -32,6 +32,7 @@ namespace API
 
         private static void RegisterScoped(IServiceCollection services)
         {
+            services.AddScoped<StartupFlow>();
         }
     }
 }

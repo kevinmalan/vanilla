@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data
 {
-    internal class DataContext : DbContext
+    public class DataContext : DbContext
     {
-        internal DataContext(DbContextOptions<DataContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }
 
-        internal DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,11 @@ namespace Data
                 entity.Property(x => x.StatusReason)
                 .HasColumnName("status_reason")
                 .HasMaxLength(200);
+
+                entity.Property(x => x.Role)
+                .HasColumnName("role")
+                .HasConversion<int>()
+                .IsRequired();
             });
         }
     }
