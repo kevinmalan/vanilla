@@ -1,6 +1,7 @@
 ﻿using Core.Auth.Config;
 using Core.Auth.Contracts;
 using Core.Auth.Services;
+using Data;
 
 namespace API
 {
@@ -12,6 +13,7 @@ namespace API
             RegisterSingletons(services);
             RegisterTransients(services);
             RegisterScoped(services);
+            DataDependencyService.RegisterAll(services, configuration);
         }
 
         public static void RegisterConfig(IServiceCollection services, IConfiguration configuration)
