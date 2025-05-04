@@ -1,7 +1,7 @@
-﻿using Core.Auth.Config;
-using Core.Auth.Contracts;
+﻿using Core.Auth.Contracts;
 using Core.Auth.Services;
 using Data;
+using Shared.Config;
 
 namespace API
 {
@@ -19,6 +19,7 @@ namespace API
         public static void RegisterConfig(IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<PasswordConfig>(configuration.GetSection("Password"));
+            services.Configure<TokenConfig>(configuration.GetSection("Tokens"));
         }
 
         private static void RegisterSingletons(IServiceCollection services)

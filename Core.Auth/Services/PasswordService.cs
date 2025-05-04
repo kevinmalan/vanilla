@@ -1,8 +1,8 @@
-﻿using Core.Auth.Config;
-using Core.Auth.Contracts;
+﻿using Core.Auth.Contracts;
 using Core.Models;
 using Konscious.Security.Cryptography;
 using Microsoft.Extensions.Options;
+using Shared.Config;
 using System.Security.Cryptography;
 using System.Text;
 

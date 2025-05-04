@@ -1,7 +1,7 @@
-﻿using Core.Auth.Config;
-using Core.Auth.Services;
+﻿using Core.Auth.Services;
 using Microsoft.Extensions.Options;
 using NSubstitute;
+using Shared.Config;
 using Shouldly;
 
 namespace Tests.Auth
@@ -49,7 +49,7 @@ namespace Tests.Auth
         [InlineData("111", "11", false)]
         [InlineData("V@lidP@ssword15", "V@lidP@ssword14", false)]
         [InlineData("V@lidP@ssword15", "V@lidP@ssword15", true)]
-        public void Hash_Verify_ShouldMatch(string password1, string password2, bool expectedResult)
+        public void Hash_Verify_ReturnsExpected(string password1, string password2, bool expected)
         {
             // Arrange
             var options = Substitute.For<IOptions<PasswordConfig>>();
@@ -71,7 +71,7 @@ namespace Tests.Auth
             var verifiedResult = service.Verify(password2, storedPasswordHash, storedSaltHash);
 
             // Assert
-            verifiedResult.ShouldBe(expectedResult);
+            verifiedResult.ShouldBe(expected);
         }
     }
 }

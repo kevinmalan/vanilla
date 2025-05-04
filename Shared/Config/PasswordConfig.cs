@@ -1,4 +1,4 @@
-﻿namespace Core.Auth.Config
+﻿namespace Shared.Config
 {
     /// <summary>
     /// In practice you calibrate these three “cost” knobs (MemoryKb, Iterations, Parallelism) to hit a target wall-clock time (e.g. 200 ms).
@@ -29,6 +29,6 @@
         public int HashLength { get; set; }
 
         // Additional secret. Not stored in the db.
-        public required string Pepper { get; set; }
+        public string Pepper { get; set; }
     }
 }
