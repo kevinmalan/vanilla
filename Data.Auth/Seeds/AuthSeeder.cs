@@ -1,9 +1,9 @@
-﻿using Data.Contracts;
+﻿using Data.Auth.Contracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data.Seeds
+namespace Data.Auth.Seeds
 {
-    public class AuthSeeder(DataContext dataContext) : IAuthSeeder
+    public class AuthSeeder(AuthContext dataContext) : IAuthSeeder
     {
         public async Task SeedUsersAsync(Core.Auth.Models.User user, Core.Auth.Models.Password password)
         {
@@ -11,7 +11,7 @@ namespace Data.Seeds
             if (existingUser != null)
                 return;
 
-            await dataContext.Users.AddAsync(new Entities.Auth.User
+            await dataContext.Users.AddAsync(new Entities.User
             {
                 UniqueId = user.UniqueId,
                 Username = user.Username,

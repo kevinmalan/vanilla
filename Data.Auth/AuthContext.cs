@@ -1,15 +1,10 @@
-﻿using Data.Entities.Auth;
+﻿using Data.Auth.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data
+namespace Data.Auth
 {
-    public class DataContext : DbContext
+    public class AuthContext(DbContextOptions<AuthContext> options) : DbContext(options)
     {
-        public DataContext(DbContextOptions<DataContext> options)
-            : base(options)
-        {
-        }
-
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

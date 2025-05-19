@@ -1,4 +1,4 @@
-﻿namespace Data.Contracts
+﻿namespace Data.Auth.Contracts
 {
     public interface IAuthSeeder
     {

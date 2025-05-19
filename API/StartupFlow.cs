@@ -1,5 +1,5 @@
 ﻿using Core.Auth.Contracts;
-using Data.Contracts;
+using Data.Auth.Contracts;
 
 namespace API
 {

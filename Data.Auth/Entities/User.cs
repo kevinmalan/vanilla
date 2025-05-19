@@ -1,6 +1,6 @@
 ﻿using Shared.Enums;
 
-namespace Data.Entities.Auth
+namespace Data.Auth.Entities
 {
     public class User
     {

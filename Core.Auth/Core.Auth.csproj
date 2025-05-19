@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Auth.Models\Core.Auth.Models.csproj" />
-    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Data.Auth\Data.Auth.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
