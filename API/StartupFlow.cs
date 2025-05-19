@@ -7,7 +7,7 @@ namespace API
     {
         public async Task SeedUserAsync()
         {
-            var user = new Core.Models.User
+            var user = new Core.Auth.Models.User
             {
                 Username = "admin@vanilla.com",
                 Firstname = "Foo",
@@ -18,7 +18,7 @@ namespace API
             };
 
             var hashedPassword = passwordService.HashPassword("1ncrediblyStongP@ssword!#");
-            var password = new Core.Models.Password
+            var password = new Core.Auth.Models.Password
             {
                 Hash = hashedPassword.Hash,
                 Salt = hashedPassword.Salt

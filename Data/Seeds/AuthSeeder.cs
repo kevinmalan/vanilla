@@ -5,7 +5,7 @@ namespace Data.Seeds
 {
     public class AuthSeeder(DataContext dataContext) : IAuthSeeder
     {
-        public async Task SeedUsersAsync(Core.Models.User user, Core.Models.Password password)
+        public async Task SeedUsersAsync(Core.Auth.Models.User user, Core.Auth.Models.Password password)
         {
             var existingUser = await dataContext.Users.FirstOrDefaultAsync();
             if (existingUser != null)

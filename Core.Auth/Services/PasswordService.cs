@@ -1,5 +1,5 @@
 ﻿using Core.Auth.Contracts;
-using Core.Models;
+using Core.Auth.Models;
 using Konscious.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using Shared.Config;

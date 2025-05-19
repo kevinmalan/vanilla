@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth", "Core.Auth\Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{7B73C392-E292-4EFA-81CE-859C2C1261D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{F22F3F26-DDCF-48DB-9224-7F6C7C0385D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{F22F3F26-DDCF-48DB-9224-7F6C7C0385D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Models", "Core.Models\Core.Models.csproj", "{9627A9D1-F59E-40E1-8D63-04F218F0FFE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth.Models", "Core.Auth.Models\Core.Auth.Models.csproj", "{9627A9D1-F59E-40E1-8D63-04F218F0FFE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

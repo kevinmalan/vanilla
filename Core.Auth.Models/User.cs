@@ -1,6 +1,6 @@
 ﻿using Shared.Enums;
 
-namespace Core.Models
+namespace Core.Auth.Models
 {
     public class User
     {

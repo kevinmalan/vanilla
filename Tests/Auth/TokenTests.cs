@@ -1,5 +1,5 @@
 ﻿using Core.Auth.Services;
-using Core.Models;
+using Core.Auth.Models;
 using Microsoft.Extensions.Options;
 using NSubstitute;
 using Shared.Config;

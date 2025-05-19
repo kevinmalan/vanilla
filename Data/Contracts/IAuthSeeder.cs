@@ -2,6 +2,6 @@
 {
     public interface IAuthSeeder
     {
-        Task SeedUsersAsync(Core.Models.User user, Core.Models.Password password);
+        Task SeedUsersAsync(Core.Auth.Models.User user, Core.Auth.Models.Password password);
     }
 }
