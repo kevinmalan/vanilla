@@ -1,4 +1,4 @@
-﻿namespace Shared.Config
+﻿namespace Common.Auth.Config
 {
     /// <summary>
     /// In practice you calibrate these three “cost” knobs (MemoryKb, Iterations, Parallelism) to hit a target wall-clock time (e.g. 200 ms).

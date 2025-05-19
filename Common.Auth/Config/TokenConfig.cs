@@ -1,4 +1,4 @@
-﻿namespace Shared.Config
+﻿namespace Common.Auth.Config
 {
     public class TokenConfig
     {

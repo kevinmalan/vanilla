@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{EFE91EF2-E7E6-4CC1-99E4-AB190026DA94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{D05B2837-3A01-4299-B757-1B1BCC037D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Auth", "Common.Auth\Common.Auth.csproj", "{D05B2837-3A01-4299-B757-1B1BCC037D9E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth", "Core.Auth\Core.Auth.csproj", "{91886948-A7FA-419C-9F3B-48B00A21496D}"
 EndProject

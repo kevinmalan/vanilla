@@ -19,7 +19,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Core.Auth.Models\Core.Auth.Models.csproj" />
-	  <ProjectReference Include="..\Shared\Shared.csproj" />
+	  <ProjectReference Include="..\Common.Auth\Common.Auth.csproj" />
 	</ItemGroup>
 
 </Project>

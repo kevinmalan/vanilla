@@ -13,8 +13,8 @@ namespace API
                 Firstname = "Foo",
                 Lastname = "Bar",
                 UniqueId = Guid.NewGuid(),
-                Status = Shared.Enums.UserStatus.Active,
-                Role = Shared.Enums.UserRole.Admin
+                Status = Common.Auth.Enums.UserStatus.Active,
+                Role = Common.Auth.Enums.UserRole.Admin
             };
 
             var hashedPassword = passwordService.HashPassword("1ncrediblyStongP@ssword!#");

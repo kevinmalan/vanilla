@@ -2,7 +2,7 @@
 using Core.Auth.Models;
 using Konscious.Security.Cryptography;
 using Microsoft.Extensions.Options;
-using Shared.Config;
+using Common.Auth.Config;
 using System.Security.Cryptography;
 using System.Text;
 

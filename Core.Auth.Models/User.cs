@@ -1,4 +1,4 @@
-﻿using Shared.Enums;
+﻿using Common.Auth.Enums;
 
 namespace Core.Auth.Models
 {

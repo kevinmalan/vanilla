@@ -2,7 +2,7 @@
 using Core.Auth.Models;
 using Microsoft.Extensions.Options;
 using NSubstitute;
-using Shared.Config;
+using Common.Auth.Config;
 using Shouldly;
 
 namespace Tests.Auth
@@ -28,8 +28,8 @@ namespace Tests.Auth
             {
                 Firstname = "f",
                 Lastname = "l",
-                Role = Shared.Enums.UserRole.Admin,
-                Status = Shared.Enums.UserStatus.Active,
+                Role = Common.Auth.Enums.UserRole.Admin,
+                Status = Common.Auth.Enums.UserStatus.Active,
                 UniqueId = Guid.NewGuid(),
                 Username = "u@email.com"
             };

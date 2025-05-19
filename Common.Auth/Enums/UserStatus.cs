@@ -1,4 +1,4 @@
-﻿namespace Shared.Enums
+﻿namespace Common.Auth.Enums
 {
     public enum UserStatus
     {
