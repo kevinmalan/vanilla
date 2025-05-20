@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Auth", "Data.Auth\Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth.Models", "Core.Auth.Models\Core.Auth.Models.csproj", "{9627A9D1-F59E-40E1-8D63-04F218F0FFE1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{67B7C53B-0DFC-490B-A4D5-D815442E1AE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D05B2837-3A01-4299-B757-1B1BCC037D9E} = {67B7C53B-0DFC-490B-A4D5-D815442E1AE3}
+		{91886948-A7FA-419C-9F3B-48B00A21496D} = {67B7C53B-0DFC-490B-A4D5-D815442E1AE3}
+		{7B73C392-E292-4EFA-81CE-859C2C1261D7} = {67B7C53B-0DFC-490B-A4D5-D815442E1AE3}
+		{F22F3F26-DDCF-48DB-9224-7F6C7C0385D8} = {67B7C53B-0DFC-490B-A4D5-D815442E1AE3}
+		{9627A9D1-F59E-40E1-8D63-04F218F0FFE1} = {67B7C53B-0DFC-490B-A4D5-D815442E1AE3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E3A7919-BB5D-42C6-B21D-E361DCDB3378}
