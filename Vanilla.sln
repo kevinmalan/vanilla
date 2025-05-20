@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Auth", "Common.Auth\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth", "Core.Auth\Core.Auth.csproj", "{91886948-A7FA-419C-9F3B-48B00A21496D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{7B73C392-E292-4EFA-81CE-859C2C1261D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Auth", "Tests.Auth\Tests.Auth.csproj", "{7B73C392-E292-4EFA-81CE-859C2C1261D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Auth", "Data.Auth\Data.Auth.csproj", "{F22F3F26-DDCF-48DB-9224-7F6C7C0385D8}"
 EndProject
