@@ -10,6 +10,7 @@ namespace Data.Auth
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // User
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("users");
@@ -64,6 +65,55 @@ namespace Data.Auth
                 .HasColumnName("role")
                 .HasConversion<int>()
                 .IsRequired();
+            });
+
+            // RefreshToken
+            modelBuilder.Entity<RefreshToken>(entity =>
+            {
+                entity.ToTable("refresh_tokens");
+
+                entity.HasKey(r => r.Id).HasName("pk_refresh_tokens");
+                entity.Property(r => r.Id)
+                      .HasColumnName("id")
+                      .UseIdentityByDefaultColumn();
+
+                entity.Property(r => r.TokenHash)
+                      .HasColumnName("token_hash")
+                      .IsRequired()
+                      .HasMaxLength(88); // SHA256 hash base64-ish length
+
+                entity.Property(r => r.ExpiresAt)
+                      .HasColumnName("expires_at")
+                      .IsRequired();
+
+                entity.Property(r => r.CreatedAt)
+                      .HasColumnName("created_at")
+                      .IsRequired();
+
+                entity.Property(r => r.CreatedByIp)
+                      .HasColumnName("created_by_ip")
+                      .HasMaxLength(45)  // support IPv6 text
+                      .IsRequired();
+
+                entity.Property(r => r.RevokedAt)
+                      .HasColumnName("revoked_at");
+
+                entity.Property(r => r.RevokedByIp)
+                      .HasColumnName("revoked_by_ip")
+                      .HasMaxLength(45);
+
+                entity.Property(r => r.ReplacedBy)
+                      .HasColumnName("replaced_by")
+                      .HasMaxLength(88);
+
+                // Foreign key to Users table:
+                entity.Property(r => r.UserId)
+                      .HasColumnName("user_id")
+                      .IsRequired();
+                entity.HasOne(r => r.User)
+                      .WithMany(u => u.RefreshTokens)
+                      .HasForeignKey(r => r.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
         }
     }

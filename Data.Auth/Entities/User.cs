@@ -14,5 +14,7 @@ namespace Data.Auth.Entities
         public UserStatus Status { get; set; }
         public string? StatusReason { get; set; }
         public UserRole Role { get; set; }
+
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
     }
 }
