@@ -4,10 +4,11 @@ using Common.Auth.Config;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Core.Auth.Contracts;
 
 namespace Core.Auth.Services
 {
-    public class TokenService(IOptions<TokenConfig> tokenOptions)
+    public class TokenService(IOptions<TokenConfig> tokenOptions) : ITokenService
     {
         private readonly TokenConfig _tokenConfig = tokenOptions.Value;
 
@@ -35,5 +36,9 @@ namespace Core.Auth.Services
 
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
+
+        // TODO create refresh token
+        // Note: when refreshing, ensure the latest refresh token is sued.
+        // this prevents old tokens being stolen are useless
     }
 }

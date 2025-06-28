@@ -24,7 +24,6 @@ namespace API
 
         private static void RegisterSingletons(IServiceCollection services)
         {
-            services.AddSingleton<IPasswordService, PasswordService>();
         }
 
         private static void RegisterTransients(IServiceCollection services)
@@ -34,6 +33,7 @@ namespace API
         private static void RegisterScoped(IServiceCollection services)
         {
             services.AddScoped<StartupFlow>();
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }

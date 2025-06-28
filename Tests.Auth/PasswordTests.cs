@@ -1,8 +1,8 @@
-﻿using Core.Auth.Services;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using NSubstitute;
 using Common.Auth.Config;
 using Shouldly;
+using Data.Auth.Services;
 
 namespace Tests.Auth
 {

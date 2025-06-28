@@ -1,12 +1,12 @@
-﻿using Core.Auth.Contracts;
-using Core.Auth.Models;
+﻿using Core.Auth.Models;
 using Konscious.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using Common.Auth.Config;
 using System.Security.Cryptography;
 using System.Text;
+using Data.Auth.Contracts;
 
-namespace Core.Auth.Services
+namespace Data.Auth.Services
 {
     public class PasswordService(IOptions<PasswordConfig> passwordOptions) : IPasswordService
     {
