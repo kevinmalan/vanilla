@@ -35,6 +35,7 @@ namespace API
             services.AddScoped<StartupFlow>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }

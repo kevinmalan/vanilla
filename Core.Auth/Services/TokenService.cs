@@ -36,9 +36,5 @@ namespace Core.Auth.Services
 
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
-
-        // TODO create refresh token
-        // Note: when refreshing, ensure the latest refresh token is sued.
-        // this prevents old tokens being stolen are useless
     }
 }

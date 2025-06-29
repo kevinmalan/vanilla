@@ -1,5 +1,6 @@
 ﻿using Common.Auth.Dtos;
 using Core.Auth.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controller
@@ -9,6 +10,7 @@ namespace API.Controller
         : BaseController
     {
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginAsync([FromBody] LoginRequestDto request)
         {
             await authService.LoginAsync(request.Username, request.Password);
