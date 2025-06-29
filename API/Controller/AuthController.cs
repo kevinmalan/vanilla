@@ -8,6 +8,7 @@ namespace API.Controller
         IAuthService authService)
         : BaseController
     {
+        [HttpPost]
         public async Task<IActionResult> LoginAsync([FromBody] LoginRequestDto request)
         {
             await authService.LoginAsync(request.Username, request.Password);
