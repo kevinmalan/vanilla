@@ -1,6 +1,8 @@
 using API;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +25,8 @@ builder.Services
             ValidateAudience = true,
             ValidAudience = builder.Configuration["Tokens:Audience"],
             ValidateLifetime = true,
+            NameClaimType = ClaimTypes.NameIdentifier,
+            RoleClaimType = ClaimTypes.Role
         };
         options.Events = new JwtBearerEvents
         {
