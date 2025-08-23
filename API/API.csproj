@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Auth\Core.Models\Core.Models.csproj" />
     <ProjectReference Include="..\Auth\Core\Core.csproj" />
     <ProjectReference Include="..\Auth\Data\Data.csproj" />
+    <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 
 </Project>

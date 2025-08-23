@@ -1,4 +1,5 @@
 ﻿using Auth.Data.Contracts;
+using Common.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Auth.Data.Repositories
@@ -10,12 +11,16 @@ namespace Auth.Data.Repositories
             var userEntity = await context.Users
                     .AsNoTracking()
                     .FirstOrDefaultAsync(u => u.Username == username)
-                    ?? throw new Exception($"No user found with username {username}");
+                    ?? throw new NotFoundException($"No user found with username {username}");
 
             var isPasswordValid = passwordService.Verify(password, userEntity.Password, userEntity.Salt);
 
             if (!isPasswordValid)
-                throw new Exception("Invalid username/password");
+                throw new ForbiddenException("Invalid username/password", new
+                {
+                    Username = username,
+                    Password = password
+                });
 
             return new Core.Models.User
             {
@@ -46,7 +51,7 @@ namespace Auth.Data.Repositories
                     })
                     .FirstOrDefaultAsync();
 
-            return user ?? throw new Exception($"No user found with uniqueId {uniqueId}");
+            return user ?? throw new NotFoundException($"No user found with uniqueId {uniqueId}");
         }
     }
 }
