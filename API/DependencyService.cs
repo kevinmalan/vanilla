@@ -1,7 +1,7 @@
-﻿using Core.Auth.Contracts;
-using Core.Auth.Services;
-using Data.Auth;
-using Common.Auth.Config;
+﻿using Auth.Core.Contracts;
+using Auth.Core.Services;
+using Auth.Data;
+using Auth.Common.Config;
 
 namespace API
 {

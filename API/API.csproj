@@ -14,17 +14,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="8.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.19" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.4" />
-	<PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="8.0.7" />
-	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core.Auth\Core.Auth.csproj" />
-    <ProjectReference Include="..\Core.Auth.Models\Core.Auth.Models.csproj" />
-    <ProjectReference Include="..\Data.Auth\Data.Auth.csproj" />
+    <ProjectReference Include="..\Auth\Common\Common.csproj" />
+    <ProjectReference Include="..\Auth\Core.Models\Core.Models.csproj" />
+    <ProjectReference Include="..\Auth\Core\Core.csproj" />
+    <ProjectReference Include="..\Auth\Data\Data.csproj" />
   </ItemGroup>
 
 </Project>

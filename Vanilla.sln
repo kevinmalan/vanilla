@@ -5,15 +5,15 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{EFE91EF2-E7E6-4CC1-99E4-AB190026DA94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Auth", "Common.Auth\Common.Auth.csproj", "{D05B2837-3A01-4299-B757-1B1BCC037D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Auth\Common\Common.csproj", "{D05B2837-3A01-4299-B757-1B1BCC037D9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth", "Core.Auth\Core.Auth.csproj", "{91886948-A7FA-419C-9F3B-48B00A21496D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Auth\Core\Core.csproj", "{91886948-A7FA-419C-9F3B-48B00A21496D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Auth", "Tests.Auth\Tests.Auth.csproj", "{7B73C392-E292-4EFA-81CE-859C2C1261D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Auth\Tests\Tests.csproj", "{7B73C392-E292-4EFA-81CE-859C2C1261D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Auth", "Data.Auth\Data.Auth.csproj", "{F22F3F26-DDCF-48DB-9224-7F6C7C0385D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Auth\Data\Data.csproj", "{F22F3F26-DDCF-48DB-9224-7F6C7C0385D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Auth.Models", "Core.Auth.Models\Core.Auth.Models.csproj", "{9627A9D1-F59E-40E1-8D63-04F218F0FFE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Models", "Auth\Core.Models\Core.Models.csproj", "{9627A9D1-F59E-40E1-8D63-04F218F0FFE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{67B7C53B-0DFC-490B-A4D5-D815442E1AE3}"
 EndProject

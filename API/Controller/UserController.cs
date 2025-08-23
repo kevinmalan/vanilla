@@ -1,4 +1,4 @@
-﻿using Core.Auth.Contracts;
+﻿using Auth.Core.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;

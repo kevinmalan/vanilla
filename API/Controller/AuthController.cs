@@ -1,5 +1,5 @@
-﻿using Common.Auth.Dtos;
-using Core.Auth.Contracts;
+﻿using Auth.Common.Dtos;
+using Auth.Core.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

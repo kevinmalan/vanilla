@@ -1,7 +1,6 @@
 using API;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
@@ -19,7 +18,7 @@ builder.Services
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Tokens:Access:Secret"])),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Tokens:Access:Secret"] ?? throw new Exception("Config 'Tokens:Access:Secret' is missing"))),
             ValidateIssuer = true,
             ValidIssuer = builder.Configuration["Tokens:Issuer"],
             ValidateAudience = true,
