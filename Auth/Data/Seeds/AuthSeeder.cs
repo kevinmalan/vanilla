@@ -7,7 +7,7 @@ namespace Auth.Data.Seeds
     {
         public async Task SeedUsersAsync(Core.Models.User user, Core.Models.Password password)
         {
-            var existingUser = await dataContext.Users.FirstOrDefaultAsync();
+            var existingUser = await dataContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username);
             if (existingUser != null)
                 return;
 

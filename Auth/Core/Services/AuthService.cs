@@ -28,7 +28,7 @@ namespace Auth.Core.Services
             {
                 HttpOnly = true,
                 Secure = true,
-                SameSite = SameSiteMode.Strict,
+                SameSite = SameSiteMode.None, // So the Vite UI running on another domain can access it
                 Expires = DateTime.UtcNow.AddDays(7) // TODO read from config
             };
 
