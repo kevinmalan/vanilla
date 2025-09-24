@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { api } from "../api";
 
 type UserDto = {
@@ -15,26 +14,26 @@ type UserDto = {
 export default function DashboardMain() {
   const [user, setUser] = useState<UserDto | null>(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let cancelled = false;
-
     (async () => {
       try {
         const res = await api.get<UserDto>("/User");
-        if (!cancelled) setUser(res.data);
-      } catch {
-        navigate("/login", { replace: true, state: { from: "/dashboard" } });
+        setUser(res.data);
+      } catch (err: any) {
+        // 401/403 are handled globally; show other errors locally
+        if (err?.response?.status !== 401 && err?.response?.status !== 403) {
+          setError(err?.response?.data ?? err?.message ?? "Failed to load user");
+        }
       } finally {
-        if (!cancelled) setLoading(false);
+        setLoading(false);
       }
     })();
-
-    return () => { cancelled = true; };
-  }, [navigate]);
+  }, []);
 
   if (loading) return <div className="container py-4">Loading…</div>;
+  if (error) return <div className="container py-4"><div className="alert alert-danger">{error}</div></div>;
   if (!user) return null;
 
   return (

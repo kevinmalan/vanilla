@@ -34,7 +34,7 @@ namespace Auth.Data.Repositories
             };
         }
 
-        public async Task<Core.Models.User> GetUserByUniqueIdAsync(Guid uniqueId)
+        public async Task<Core.Models.User> GetUserByUniqueIdAsync(Guid uniqueId, CancellationToken cancellationToken)
         {
             var user = await context.Users
                     .AsNoTracking()
@@ -49,7 +49,7 @@ namespace Auth.Data.Repositories
                         StatusReason = u.StatusReason,
                         UniqueId = u.UniqueId
                     })
-                    .FirstOrDefaultAsync();
+                    .FirstOrDefaultAsync(cancellationToken: cancellationToken);
 
             return user ?? throw new NotFoundException($"No user found with uniqueId {uniqueId}");
         }

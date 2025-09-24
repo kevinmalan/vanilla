@@ -5,9 +5,9 @@ namespace Auth.Core.Services
 {
     public class UserService(IUserRepository userRepository) : IUserService
     {
-        public async Task<Models.User> GetUserByUniqueIdAsync(Guid uniqueId)
+        public async Task<Models.User> GetUserByUniqueIdAsync(Guid uniqueId, CancellationToken cancellationToken)
         {
-            return await userRepository.GetUserByUniqueIdAsync(uniqueId);
+            return await userRepository.GetUserByUniqueIdAsync(uniqueId, cancellationToken);
         }
     }
 }

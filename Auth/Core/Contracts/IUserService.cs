@@ -2,6 +2,6 @@
 {
     public interface IUserService
     {
-        Task<Models.User> GetUserByUniqueIdAsync(Guid uniqueId);
+        Task<Models.User> GetUserByUniqueIdAsync(Guid uniqueId, CancellationToken cancellationToken);
     }
 }

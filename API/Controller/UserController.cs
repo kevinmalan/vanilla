@@ -13,14 +13,14 @@ namespace API.Controller
         /// <returns></returns>
         [HttpGet]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetLoggedInUserAsync()
+        public async Task<IActionResult> GetLoggedInUserAsync(CancellationToken cancellationToken)
         {
             var username = User.Identity?.Name;
             var role = User.FindFirstValue(ClaimTypes.Role);
             var uniqueId = Guid.Parse(User.FindFirst("unique-id")?.Value ?? $"{Guid.Empty}");
             var status = User.FindFirst("status")?.Value;
 
-            var user = await userService.GetUserByUniqueIdAsync(uniqueId);
+            var user = await userService.GetUserByUniqueIdAsync(uniqueId, cancellationToken);
             
             return Ok(user);
         }

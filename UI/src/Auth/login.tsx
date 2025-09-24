@@ -10,7 +10,7 @@ export default function Login() {
     const [okMsg, setOkMsg] = useState<string | null>(null);
 
     const navigate = useNavigate();
-    const location = useLocation() as { state?: { from?: string } };
+    const location = useLocation();
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -20,8 +20,9 @@ export default function Login() {
         try {
             await api.post("/Auth", { username, password });
             setOkMsg("Logged in successfully.");
-            const dest = location.state?.from || "/dashboard";
-            navigate(dest, { replace: true });
+            const searchParams = new URLSearchParams(location.search);
+            const from = searchParams.get("from") || "dashboard";
+            navigate(from, { replace: true });
         } catch (err: any) {
             const msg =
                 err?.response?.data?.message ??
